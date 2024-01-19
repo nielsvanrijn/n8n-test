@@ -20,7 +20,17 @@ ENV N8N_BASIC_AUTH_ACTIVE=true
 ENV N8N_BASIC_AUTH_USER=$USERNAME
 ENV N8N_BASIC_AUTH_PASSWORD=$PASSWORD
 
-RUN npm install n8n-nodes-puppeteer
+# # Set a custom user to not have n8n run as root
+USER root
+
+# Installs latest Chromium (100) package.
+RUN apk add --no-cache \
+  chromium \
+  nss \
+  freetype \
+  harfbuzz \
+  ttf-freefont \
+  yarn
 
 # CMD ["n8n", "start"]
 CMD ["start"]
