@@ -20,5 +20,7 @@ ENV N8N_BASIC_AUTH_ACTIVE=true
 ENV N8N_BASIC_AUTH_USER=$USERNAME
 ENV N8N_BASIC_AUTH_PASSWORD=$PASSWORD
 
+RUN cd /usr/local/lib/node_modules/n8n && npm install n8n-nodes-puppeteer
+
 # CMD ["n8n", "start"]
 CMD ["start"]
