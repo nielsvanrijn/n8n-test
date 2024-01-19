@@ -9,6 +9,15 @@ ARG PGUSER
 ARG USERNAME
 ARG PASSWORD
 
+# Install necessary dependencies
+RUN apk add --no-cache \
+  chromium \
+  nss \
+  freetype \
+  harfbuzz \
+  ca-certificates \
+  ttf-freefont
+
 ENV DB_TYPE=postgresdb
 ENV DB_POSTGRESDB_DATABASE=$PGDATABASE
 ENV DB_POSTGRESDB_HOST=$PGHOST
