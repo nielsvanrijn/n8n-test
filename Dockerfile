@@ -9,6 +9,12 @@ ARG PGUSER
 ARG USERNAME
 ARG PASSWORD
 
+# Update package index and upgrade
+RUN apk update && apk upgrade
+
+# Use a different package repository
+RUN echo "http://dl-cdn.alpinelinux.org/alpine/latest-stable/community" >> /etc/apk/repositories
+
 # Install necessary dependencies
 RUN apk add --no-cache \
   chromium \
