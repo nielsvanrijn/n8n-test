@@ -43,12 +43,12 @@ USER root
 # RUN cd /usr/local/lib/node_modules/n8n && npm install n8n-nodes-puppeteer
 
 # RUN cd /usr/local/lib/node_modules/ && npm install moment
-RUN ls
+RUN echo $(ls -1)
 RUN cd /usr
-RUN ls
+RUN echo $(ls -1)
 RUN cd /local
-RUN ls
+RUN echo $(ls -1)
 RUN cd /lib
-RUN ls
+RUN echo $(ls -1)
 
 CMD ["start"]
