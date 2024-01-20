@@ -20,11 +20,10 @@ ENV N8N_BASIC_AUTH_ACTIVE=true
 ENV N8N_BASIC_AUTH_USER=$USERNAME
 ENV N8N_BASIC_AUTH_PASSWORD=$PASSWORD
 
-ENV NODE_FUNCTION_ALLOW_EXTERNAL=moment
-
+ENV NODE_FUNCTION_ALLOW_EXTERNAL=*
 
 # Set a custom user to not have n8n run as root
-USER root
+# USER root
 
 # Installs latest Chromium (100) package.
 # RUN apk add --no-cache \
@@ -43,5 +42,10 @@ USER root
 # RUN cd /usr/local/lib/node_modules/n8n && npm install n8n-nodes-puppeteer
 
 # RUN cd /usr/local/lib/node_modules/ && npm install moment
+
+
+USER root
+RUN npm install -g moment
+USER node
 
 CMD ["start"]
