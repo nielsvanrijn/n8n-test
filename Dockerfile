@@ -45,7 +45,7 @@ ENV NODE_FUNCTION_ALLOW_EXTERNAL=*
 
 
 USER root
-RUN npm install -g moment
+RUN npm install -g puppeteer
 USER node
 
 CMD ["start"]
