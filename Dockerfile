@@ -42,6 +42,13 @@ USER root
 # Install n8n-nodes-puppeteer
 # RUN cd /usr/local/lib/node_modules/n8n && npm install n8n-nodes-puppeteer
 
-RUN cd /usr/local/lib/node_modules/ && npm install moment
+# RUN cd /usr/local/lib/node_modules/ && npm install moment
+RUN ls
+RUN cd /usr
+RUN ls
+RUN cd /local
+RUN ls
+RUN cd /lib
+RUN ls
 
 CMD ["start"]
