@@ -20,7 +20,7 @@ ENV N8N_BASIC_AUTH_ACTIVE=true
 ENV N8N_BASIC_AUTH_USER=$USERNAME
 ENV N8N_BASIC_AUTH_PASSWORD=$PASSWORD
 
-ENV NODE_FUNCTION_ALLOW_EXTERNAL=puppeteer
+ENV NODE_FUNCTION_ALLOW_EXTERNAL=moment
 
 
 # Set a custom user to not have n8n run as root
@@ -42,6 +42,6 @@ USER root
 # Install n8n-nodes-puppeteer
 # RUN cd /usr/local/lib/node_modules/n8n && npm install n8n-nodes-puppeteer
 
-RUN cd /usr/local/lib/node_modules/ && npm install puppeteer
+RUN cd /usr/local/lib/node_modules/ && npm install moment
 
 CMD ["start"]
